@@ -10,7 +10,12 @@ Detect appended data in a PNG file, interpret the scanner’s findings, and test
 
 ## How the lab works
 
-`lab_mode.txt` controls which image `make_demo_image.py` generates. In `clean` mode the image ends at the `IEND` chunk. In `suspicious` mode the generator adds harmless demo text after that chunk. Each workflow run generates a fresh `images/student_image.png` and runs `scanner.py`.
+`lab_mode.txt` controls which image `make_demo_image.py` generates.
+
+- **Clean mode:** the image ends at the `IEND` chunk.
+- **Suspicious mode:** the generator adds harmless demo text after that chunk.
+
+Each workflow run generates a fresh `images/student_image.png` and runs `scanner.py`.
 
 The scanner checks the file signature and looks for the expected ending marker, trailing data, and configured keywords. It searches file bytes for keywords without regard to ASCII letter case. These are basic checks. A keyword can occur in legitimate content, and a passing scan means the configured checks found no issue in the file that was scanned. Use the generated demo image and harmless text throughout the lab.
 
@@ -37,7 +42,7 @@ For the rest of the lab, use the pencil icon to edit files and commit directly t
 2. Open the run for that commit and expand **Run StegoGuard scanner**. Confirm that the step failed and reported both `Extra data found after PNG ending marker` and `Suspicious keyword found inside file: hidden_message`. Record the run link and both findings.
 3. Change `lab_mode.txt` back to `clean` and commit. Confirm that the workflow passes after generating and scanning a fresh image.
 
-An error in **Create demo image** means the scanner step did not run. Check that `lab_mode.txt` contains one of the two allowed values before interpreting a red run as detection evidence.
+**Note:** An error in **Create demo image** means the scanner step did not run. Check that `lab_mode.txt` contains one of the two allowed values before interpreting a red run as detection evidence.
 
 ## 3. Test a new keyword rule
 
@@ -51,7 +56,7 @@ Use `confidential` or choose another harmless ASCII keyword outside the starter 
 
 ## Submit your work
 
-Submit the link to your fork and the five workflow-run links below with the relevant scanner log lines. Add screenshots if required by your course.
+**What to submit:** Submit the link to your fork and the five workflow-run links below with the relevant scanner log lines. Add screenshots if required by your course.
 
 | Run | Scanner evidence |
 | --- | --- |
