@@ -31,7 +31,7 @@ The scanner checks the file signature and looks for the expected ending marker, 
 
 1. Open the [starter repository](https://github.com/RafikHamza/stegoguard-image-forensics), select **Fork**, choose your own account, and select **Create fork**.
 2. In your fork, confirm that `lab_mode.txt` contains `clean`. If you are using an earlier fork with a blank file, enter `clean` and commit directly to `main`.
-3. Open **Actions** and enable workflows if GitHub prompts you. In the sidebar, select **StegoGuard Image Forensics**. Select **Run workflow**, choose `main`, and start the run.
+3. Open **Actions** and enable workflows if GitHub prompts you. In the sidebar, select **StegoGuard - Scan Images for Hidden Data**. Select **Run workflow**, choose `main`, and start the run.
 4. Open the run, select **image-forensics**, and expand **Run StegoGuard scanner**. Confirm that it scanned `images/student_image.png` and printed `Status: CLEAN`. Save the run link.
 
 For the rest of the lab, use the pencil icon to edit files and commit directly to `main` in your fork. Each commit starts a new workflow run. Wait for it to finish and match the run to the commit you just made.
